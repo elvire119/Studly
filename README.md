@@ -1,5 +1,5 @@
 # Studly
-Start DiscoveryService before all microservice
+Start DiscoveryService before all microservices
 
 To run Nodejs app
 
