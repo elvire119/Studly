@@ -1,0 +1,23 @@
+schema{
+    mutation:Mutation
+    query:Query
+}
+
+type Classe {
+    id: ID!
+    name: String!
+    description: String
+}
+
+type Query {
+    getAllClasses: [Classe!]!
+    getClassesById(id: ID!): Classe
+}
+
+
+
+type Mutation {
+    createClasses(name: String!, description: String): Classe!
+    updateClasses(id: ID!, name: String!, description: String): Classe!
+    deleteClasses(id: ID!): Boolean
+}

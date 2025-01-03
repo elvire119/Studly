@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: ws1
+          uri: lb://ETUDIANTSERVICE
+          predicates:
+            Path= /api/etudiants/**
+        - id: ws2
+          uri: lb://MATIERESERVICE
+          predicates:
+            Path= /api/etudiants/**
